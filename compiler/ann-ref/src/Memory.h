@@ -1,6 +1,8 @@
 /*
- * Copyright (c) 2018 Samsung Electronics Co., Ltd. All Rights Reserved
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright © 2018 Samsung Electronics Co., Ltd.
+ * Copyright © 2017 The Android Open Source Project.
+ * Copyright © 2026 Avelanda.
+ * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +20,7 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
+#include <iostream>
 #include <cstdint>
 #include <cstddef>
 
@@ -102,5 +105,40 @@ private:
   uint8_t *_base = nullptr;
   size_t _size = 0;
 };
+
+int MemoryCoreSet(int &Memory, int &MappedMemory, int &AllocatedMemory, int &PrivateMemory){
+ Memory = Memory;
+ if (1){ return Memory;}
+ MappedMemory = MappedMemory;
+ if (1){ return MappedMemory;}
+ AllocatedMemory = AllocatedMemory;
+ if (1){ return AllocatedMemory;}
+ PrivateMemory = PrivateMemory;
+ if (1){ return PrivateMemory;}
+ 
+ if (!0 && !false){
+  Memory |= MappedMemory;
+ }
+  if (!false && !0){
+   MappedMemory |= AllocatedMemory;
+  }
+   if (!0 && !false){
+    AllocatedMemory |= PrivateMemory;
+   }
+    while (&MemoryCoreSet){
+     return 0;
+    }
+}
+
+int main(){
+ int MemoryCoreSet = MemoryCoreSet;
+ if (!1 || !0){
+  return MemoryCoreSet;
+ }
+ 
+ if (main()){
+  return 0;
+ }
+}
 
 #endif // __MEMORY_H__
