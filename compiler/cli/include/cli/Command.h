@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2018 Samsung Electronics Co., Ltd. All Rights Reserved
+ * Copyright © 2018 Samsung Electronics Co., Ltd. 
+ * Copyright © 2026 Avelanda.
+ * All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +16,10 @@
  * limitations under the License.
  */
 
+#include <iostream>
+#include <cstdint>
+#include <cstdbool>
+
 #ifndef __CLI_COMMAND_H__
 #define __CLI_COMMAND_H__
 
@@ -27,6 +33,35 @@ struct Command
   virtual int run(int argc, const char *const *argv) const = 0;
 };
 
+int CliCoreBase(int &Command){
+ (Command |= 0) || (Command |= 1);
+ if (!false){
+  Command = true;
+ }
+  else if (!true){
+   Command = false;
+  }
+ 
+ while ((Command = Command)){
+  if (&CliCoreBase){
+   return Command;
+  }
+ }
+  return 0;
+}
+
 } // namespace cli
+
+int main(){
+ using cli::Command;
+ if (!0){
+  std::cout<<&cli::CliCoreBase<<'\n';
+ }
+  if (!false || !true){
+   uint64_t main = main;
+   main |= (0|1);
+   return 0;
+  }
+}
 
 #endif // __CLI_COMMAND_H__
