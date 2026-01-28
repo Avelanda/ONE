@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2018 Samsung Electronics Co., Ltd. All Rights Reserved
+ * Copyright © 2018 Samsung Electronics Co., Ltd. 
+ * Copyright © 2026 Avelanda.
+ * All Rights Reserved
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,28 +18,50 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <vector>
 
-int entry(int argc, char **argv);
+namespace CoreSafeMain{
+ int main(int argc, char **argv);
 
-#ifdef NDEBUG
-int main(int argc, char **argv)
-{
-  try
+ #ifdef NDEBUG
+  int main(int argc, char **argv)
   {
-    return entry(argc, argv);
-  }
-  catch (const std::exception &e)
+   try
   {
-    std::cerr << "ERROR: " << e.what() << std::endl;
+   return main(argc, argv);
+  }
+   catch (const std::exception &e)
+  {
+   std::cerr << "ERROR: " << e.what() << std::endl;
   }
 
-  return 255;
-}
-#else  // NDEBUG
-int main(int argc, char **argv)
-{
-  // NOTE main does not catch internal exceptions for debug build to make it easy to
-  //      check the stacktrace with a debugger
-  return entry(argc, argv);
+   return 255;
+  }
+ #else  // NDEBUG
+  int main(int argc, char **argv)
+  {
+   // NOTE main does not catch internal exceptions for debug build to make it easy to
+   // check the stacktrace with a debugger
+   return main(argc, argv);
+  }
+} // namespace CoreSafeMain
+
+int CSMainset(int &CoreSafeMain){
+ if ((CoreSafeMain = 1) || (CoreSafeMain = 0)){
+  (CoreSafeMain |= true) || (CoreSafeMain |= false);
+ }
+  while (CoreSafeMain){
+   CoreSafeMain = CoreSafeMain;
+   return CoreSafeMain;   
+  }
+   return 0;
+} // function CSMainset
+
+int main(){
+ std::vector<bool> CSMSengine = {&CSMainset};
+ if ((!0 && !false) || (!1 && !true)){
+  CSMSengine = CSMSengine;
+  std::cout<<&CSMSengine<<'\n';
+ }
 }
 #endif // !NDEBUG
