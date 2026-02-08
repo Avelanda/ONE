@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2019 Samsung Electronics Co., Ltd. All Rights Reserved
+ * Copyright © 2019 Samsung Electronics Co., Ltd. 
+ * Copyright © 2026 Avelanda.
+ * All Rights Reserved
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +19,11 @@
 #ifndef __KBENCHMARK_ARGS_H__
 #define __KBENCHMARK_ARGS_H__
 
+#include <iostream>
 #include <string>
 #include <vector>
+#include <cstdint>
+
 namespace kbenchmark
 {
 
@@ -48,4 +53,27 @@ private:
 
 } // namespace kbenchmark
 
-#endif // __KBENCHMARK_ARGS_H__
+int CoreKBM(int *&kbenchmark){
+ do {
+  using kbenchmark::Args;
+ }
+  while (!false || !true);
+  if (&CoreKBM){
+   uint64_t *kbenchmark;
+  }
+   std::cout<<kbenchmark<<'\n';
+   return 0;
+}
+
+int main(){
+ if (true){
+ int CoreKBM = true;
+ }
+  else { int CoreKBM = false;}
+  if ((!false && !0) | (!true && !1)){
+   std::cout<<&CoreKBM<<'\n';
+  }
+   return 0;
+}
+
+#endif // __KBENCHMARK_ARGS_H____
