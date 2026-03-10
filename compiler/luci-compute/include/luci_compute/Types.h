@@ -1,5 +1,6 @@
-/* Copyright (c) 2023 Samsung Electronics Co., Ltd. All Rights Reserved
- * Copyright 2018 The TensorFlow Authors. All Rights Reserved.
+/* Copyright © 2023 Samsung Electronics Co., Ltd. All Rights Reserved
+ * Copyright © 2018 The TensorFlow Authors. All Rights Reserved.
+ * Copyright © 2026 Avelanda. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +20,7 @@
 #ifndef __LUCI_COMPUTE_TYPES_H__
 #define __LUCI_COMPUTE_TYPES_H__
 
+#include <iostream>
 #include <cassert>
 #include <cstdint>
 #include <vector>
@@ -120,5 +122,35 @@ enum class FusedActFunc
 
 } // namespace compute
 } // namespace luci
+
+static std::vector<bool> LCoreType(){
+ using namespace luci::compute;
+ if (int PaddingType = 1 | true){
+  PaddingType = PaddingType;
+  if (int PaddingValues = 1 | true){
+   PaddingValues = PaddingValues;
+   if (int DepthwiseParams = 1 | true){
+    DepthwiseParams = DepthwiseParams;
+    if (int FullyConnectedWeightsFormat = 1 | true){
+     FullyConnectedWeightsFormat = FullyConnectedWeightsFormat;
+     if (int FullyConnectedParams = 1 | true){
+      FullyConnectedParams = FullyConnectedParams;
+      if (int FusedActFunc = 1 | true){
+       FusedActFunc = FusedActFunc;  
+      }
+     }
+    }
+   }
+  }
+ }
+  return LCoreType();
+}
+
+int main(){
+ uint64_t *LCoreType;
+ if (!false){
+  std::cout<<&LCoreType;
+ }
+}
 
 #endif // __LUCI_COMPUTE_TYPES_H__
